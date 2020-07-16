@@ -1,6 +1,6 @@
 # libraries
 import json
-from snorkel.labeling import labeling_function, PandasLFApplier
+from snorkel.labeling import labeling_function, PandasLFApplier, LabelingFunction
 import pandas as pd 
 import re
 from empath import Empath
@@ -203,479 +203,61 @@ def lf1_6(x): # lf1 works
 
 	return ABSTAIN
 
-@labeling_function()
-def lf2_0(x):
-	text = x.values[0]
-	prob = lexicon.analyze(text, categories=["prof0"])
-	prob = prob["prof0"]
-
-	if prob >= 0.2:
-		return POS
-	else:
-		return ABSTAIN
-
-@labeling_function()
-def lf2_1(x):
-	text = x.values[0]
-	prob = lexicon.analyze(text, categories=["prof1"])
-	prob = prob["prof1"]
-
-	if prob >= 0.2:
-		return POS
-	else:
-		return ABSTAIN
-
-@labeling_function()
-def lf2_2(x):
-	text = x.values[0]
-	prob = lexicon.analyze(text, categories=["prof2"])
-	prob = prob["prof2"]
-
-	if prob >= 0.2:
-		return POS
-	else:
-		return ABSTAIN
-
-@labeling_function()
-def lf2_3(x):
-	text = x.values[0]
-	prob = lexicon.analyze(text, categories=["prof3"])
-	prob = prob["prof3"]
-
-	if prob >= 0.2:
-		return POS
-	else:
-		return ABSTAIN
-
-@labeling_function()
-def lf2_4(x):
-	text = x.values[0]
-	prob = lexicon.analyze(text, categories=["prof4"])
-	prob = prob["prof4"]
-
-	if prob >= 0.2:
-		return POS
-	else:
-		return ABSTAIN
-
-@labeling_function()
-def lf2_5(x):
-	text = x.values[0]
-	prob = lexicon.analyze(text, categories=["prof5"])
-	prob = prob["prof5"]
-
-	if prob >= 0.2:
-		return POS
-	else:
-		return ABSTAIN
-
-@labeling_function()
-def lf2_6(x):
-	text = x.values[0]
-	prob = lexicon.analyze(text, categories=["prof6"])
-	prob = prob["prof6"]
-
-	if prob >= 0.2:
-		return POS
-	else:
-		return ABSTAIN
-
-@labeling_function()
-def lf2_7(x):
-	text = x.values[0]
-	prob = lexicon.analyze(text, categories=["prof7"])
-	prob = prob["prof7"]
-
-	if prob >= 0.2:
-		return POS
-	else:
-		return ABSTAIN
-
-@labeling_function()
-def lf2_8(x):
-	text = x.values[0]
-	prob = lexicon.analyze(text, categories=["prof8"])
-	prob = prob["prof8"]
-
-	if prob >= 0.2:
-		return POS
-	else:
-		return ABSTAIN
-
-@labeling_function()
-def lf2_9(x):
-	text = x.values[0]
-	prob = lexicon.analyze(text, categories=["prof9"])
-	prob = prob["prof9"]
-
-	if prob >= 0.2:
-		return POS
-	else:
-		return ABSTAIN
-
-@labeling_function()
-def lf2_10(x):
-	text = x.values[0]
-	prob = lexicon.analyze(text, categories=["prof10"])
-	prob = prob["prof10"]
-
-	if prob >= 0.2:
-		return POS
-	else:
-		return ABSTAIN
-
-@labeling_function()
-def lf2_11(x):
-	text = x.values[0]
-	prob = lexicon.analyze(text, categories=["prof11"])
-	prob = prob["prof11"]
-
-	if prob >= 0.2:
-		return POS
-	else:
-		return ABSTAIN
-
-@labeling_function()
-def lf2_12(x):
-	text = x.values[0]
-	prob = lexicon.analyze(text, categories=["prof12"])
-	prob = prob["prof12"]
-
-	if prob >= 0.2:
-		return POS
-	else:
-		return ABSTAIN
-
-@labeling_function()
-def lf2_13(x):
-	text = x.values[0]
-	prob = lexicon.analyze(text, categories=["prof13"])
-	prob = prob["prof13"]
-
-	if prob >= 0.2:
-		return POS
-	else:
-		return ABSTAIN
-
-@labeling_function()
-def lf2_14(x):
-	text = x.values[0]
-	prob = lexicon.analyze(text, categories=["prof14"])
-	prob = prob["prof14"]
-
-	if prob >= 0.2:
-		return POS
-	else:
-		return ABSTAIN
-
-@labeling_function()
-def lf2_15(x):
-	text = x.values[0]
-	prob = lexicon.analyze(text, categories=["prof15"])
-	prob = prob["prof15"]
-
-	if prob >= 0.2:
-		return POS
-	else:
-		return ABSTAIN
-
-@labeling_function()
-def lf2_16(x):
-	text = x.values[0]
-	prob = lexicon.analyze(text, categories=["prof16"])
-	prob = prob["prof16"]
-
-	if prob >= 0.2:
-		return POS
-	else:
-		return ABSTAIN
-
-@labeling_function()
-def lf2_17(x):
-	text = x.values[0]
-	prob = lexicon.analyze(text, categories=["prof17"])
-	prob = prob["prof17"]
-
-	if prob >= 0.2:
-		return POS
-	else:
-		return ABSTAIN
-
-@labeling_function()
-def lf2_18(x):
-	text = x.values[0]
-	prob = lexicon.analyze(text, categories=["prof18"])
-	prob = prob["prof18"]
-
-	if prob >= 0.2:
-		return POS
-	else:
-		return ABSTAIN
-
-@labeling_function()
-def lf2_19(x):
-	text = x.values[0]
-	prob = lexicon.analyze(text, categories=["prof19"])
-	prob = prob["prof19"]
-
-	if prob >= 0.2:
-		return POS
-	else:
-		return ABSTAIN
-
-@labeling_function()
-def lf2_20(x):
-	text = x.values[0]
-	prob = lexicon.analyze(text, categories=["prof20"])
-	prob = prob["prof20"]
-
-	if prob >= 0.2:
-		return POS
-	else:
-		return ABSTAIN
-
-@labeling_function()
-def lf2_21(x):
-	text = x.values[0]
-	prob = lexicon.analyze(text, categories=["prof21"])
-	prob = prob["prof21"]
-
-	if prob >= 0.2:
-		return POS
-	else:
-		return ABSTAIN
-
-@labeling_function()
-def lf2_22(x):
-	text = x.values[0]
-	prob = lexicon.analyze(text, categories=["prof22"])
-	prob = prob["prof22"]
-
-	if prob >= 0.2:
-		return POS
-	else:
-		return ABSTAIN
-
-@labeling_function()
-def lf2_23(x):
-	text = x.values[0]
-	prob = lexicon.analyze(text, categories=["prof23"])
-	prob = prob["prof23"]
-
-	if prob >= 0.2:
-		return POS
-	else:
-		return ABSTAIN
-
-@labeling_function()
-def lf2_24(x):
-	text = x.values[0]
-	prob = lexicon.analyze(text, categories=["prof24"])
-	prob = prob["prof24"]
-
-	if prob >= 0.2:
-		return POS
-	else:
-		return ABSTAIN
-
-@labeling_function()
-def lf2_25(x):
-	text = x.values[0]
-	prob = lexicon.analyze(text, categories=["prof25"])
-	prob = prob["prof25"]
-
-	if prob >= 0.2:
-		return POS
-	else:
-		return ABSTAIN
-
-@labeling_function()
-def lf2_26(x):
-	text = x.values[0]
-	prob = lexicon.analyze(text, categories=["prof26"])
-	prob = prob["prof26"]
-
-	if prob >= 0.2:
-		return POS
-	else:
-		return ABSTAIN
-
-@labeling_function()
-def lf2_27(x):
-	text = x.values[0]
-	prob = lexicon.analyze(text, categories=["prof27"])
-	prob = prob["prof27"]
-
-	if prob >= 0.2:
-		return POS
-	else:
-		return ABSTAIN
-
-@labeling_function()
-def lf2_28(x):
-	text = x.values[0]
-	prob = lexicon.analyze(text, categories=["prof28"])
-	prob = prob["prof28"]
-
-	if prob >= 0.2:
-		return POS
-	else:
-		return ABSTAIN
-
-@labeling_function()
-def lf2_29(x):
-	text = x.values[0]
-	prob = lexicon.analyze(text, categories=["prof29"])
-	prob = prob["prof29"]
-
-	if prob >= 0.2:
-		return POS
-	else:
-		return ABSTAIN
-
-@labeling_function()
-def lf2_30(x):
-	text = x.values[0]
-	prob = lexicon.analyze(text, categories=["prof30"])
-	prob = prob["prof30"]
-
-	if prob >= 0.2:
-		return POS
-	else:
-		return ABSTAIN
-
-@labeling_function()
-def lf2_31(x):
-	text = x.values[0]
-	prob = lexicon.analyze(text, categories=["prof31"])
-	prob = prob["prof31"]
-
-	if prob >= 0.2:
-		return POS
-	else:
-		return ABSTAIN
-
-@labeling_function()
-def lf2_32(x):
-	text = x.values[0]
-	prob = lexicon.analyze(text, categories=["prof32"])
-	prob = prob["prof32"]
-
-	if prob >= 0.2:
-		return POS
-	else:
-		return ABSTAIN
-
-@labeling_function()
-def lf2_33(x):
-	text = x.values[0]
-	prob = lexicon.analyze(text, categories=["prof33"])
-	prob = prob["prof33"]
-
-	if prob >= 0.2:
-		return POS
-	else:
-		return ABSTAIN
-
-@labeling_function()
-def lf2_34(x):
-	text = x.values[0]
-	prob = lexicon.analyze(text, categories=["prof34"])
-	prob = prob["prof34"]
-
-	if prob >= 0.2:
-		return POS
-	else:
-		return ABSTAIN
-
-@labeling_function()
-def lf2_35(x):
-	text = x.values[0]
-	prob = lexicon.analyze(text, categories=["prof35"])
-	prob = prob["prof35"]
-
-	if prob >= 0.2:
-		return POS
-	else:
-		return ABSTAIN
-
-@labeling_function()
-def lf2_36(x):
-	text = x.values[0]
-	prob = lexicon.analyze(text, categories=["prof36"])
-	prob = prob["prof36"]
-
-	if prob >= 0.2:
-		return POS
-	else:
-		return ABSTAIN
-
-@labeling_function()
-def lf2_37(x):
-	text = x.values[0]
-	prob = lexicon.analyze(text, categories=["prof37"])
-	prob = prob["prof37"]
-
-	if prob >= 0.2:
-		return POS
-	else:
-		return ABSTAIN
-
-@labeling_function()
-def lf2_38(x):
-	text = x.values[0]
-	prob = lexicon.analyze(text, categories=["prof38"])
-	prob = prob["prof38"]
-
-	if prob >= 0.2:
-		return POS
-	else:
-		return ABSTAIN
-
-@labeling_function()
-def lf2_39(x):
-	text = x.values[0]
-	prob = lexicon.analyze(text, categories=["prof39"])
-	prob = prob["prof39"]
-
-	if prob >= 0.2:
-		return POS
-	else:
-		return ABSTAIN
-
-@labeling_function()
-def lf2_40(x):
-	text = x.values[0]
-	prob = lexicon.analyze(text, categories=["prof40"])
-	prob = prob["prof40"]
-
-	if prob >= 0.2:
-		return POS
-	else:
-		return ABSTAIN
-
-@labeling_function()
-def lf2_41(x):
-	text = x.values[0]
-	prob = lexicon.analyze(text, categories=["prof41"])
-	prob = prob["prof41"]
-
-	if prob >= 0.2:
-		return POS
-	else:
-		return ABSTAIN
-
-@labeling_function()
-def lf2_42(x):
-	text = x.values[0]
-	prob = lexicon.analyze(text, categories=["prof42"])
-	prob = prob["prof42"]
-
-	if prob >= 0.2:
-		return POS
-	else:
-		return ABSTAIN
-
+def keyword_lookup(x, keywords, label):
+    if any(word in x.values[0].lower() for word in keywords):
+        return label
+    return ABSTAIN
+
+def lf2(keywords, label, attr_name):
+    return LabelingFunction(
+        name=f"keyword_lf2_{attr_name}",
+        f=keyword_lookup,
+        resources=dict(keywords=keywords, label=label),
+    )
+
+lf2_0 = lf2(keywords=lexicon.cats["prof0"], label=POS, attr_name="prof0")
+lf2_1 = lf2(keywords=lexicon.cats["prof1"], label=POS, attr_name="prof1")
+lf2_2 = lf2(keywords=lexicon.cats["prof2"], label=POS, attr_name="prof2")
+lf2_3 = lf2(keywords=lexicon.cats["prof3"], label=POS, attr_name="prof3")
+lf2_4 = lf2(keywords=lexicon.cats["prof4"], label=POS, attr_name="prof4")
+lf2_5 = lf2(keywords=lexicon.cats["prof5"], label=POS, attr_name="prof5")
+lf2_6 = lf2(keywords=lexicon.cats["prof6"], label=POS, attr_name="prof6")
+lf2_7 = lf2(keywords=lexicon.cats["prof7"], label=POS, attr_name="prof7")
+lf2_8 = lf2(keywords=lexicon.cats["prof8"], label=POS, attr_name="prof8")
+lf2_9 = lf2(keywords=lexicon.cats["prof9"], label=POS, attr_name="prof9")
+lf2_10 = lf2(keywords=lexicon.cats["prof10"], label=POS, attr_name="prof10")
+lf2_11 = lf2(keywords=lexicon.cats["prof11"], label=POS, attr_name="prof11")
+lf2_12 = lf2(keywords=lexicon.cats["prof12"], label=POS, attr_name="prof12")
+lf2_13 = lf2(keywords=lexicon.cats["prof13"], label=POS, attr_name="prof13")
+lf2_14 = lf2(keywords=lexicon.cats["prof14"], label=POS, attr_name="prof14")
+lf2_15 = lf2(keywords=lexicon.cats["prof15"], label=POS, attr_name="prof15")
+lf2_16 = lf2(keywords=lexicon.cats["prof16"], label=POS, attr_name="prof16")
+lf2_17 = lf2(keywords=lexicon.cats["prof17"], label=POS, attr_name="prof17")
+lf2_18 = lf2(keywords=lexicon.cats["prof18"], label=POS, attr_name="prof18")
+lf2_19 = lf2(keywords=lexicon.cats["prof19"], label=POS, attr_name="prof19")
+lf2_20 = lf2(keywords=lexicon.cats["prof20"], label=POS, attr_name="prof20")
+lf2_21 = lf2(keywords=lexicon.cats["prof21"], label=POS, attr_name="prof21")
+lf2_22 = lf2(keywords=lexicon.cats["prof22"], label=POS, attr_name="prof22")
+lf2_23 = lf2(keywords=lexicon.cats["prof23"], label=POS, attr_name="prof23")
+lf2_24 = lf2(keywords=lexicon.cats["prof24"], label=POS, attr_name="prof24")
+lf2_25 = lf2(keywords=lexicon.cats["prof25"], label=POS, attr_name="prof25")
+lf2_26 = lf2(keywords=lexicon.cats["prof26"], label=POS, attr_name="prof26")
+lf2_27 = lf2(keywords=lexicon.cats["prof27"], label=POS, attr_name="prof27")
+lf2_28 = lf2(keywords=lexicon.cats["prof28"], label=POS, attr_name="prof28")
+lf2_29 = lf2(keywords=lexicon.cats["prof29"], label=POS, attr_name="prof29")
+lf2_30 = lf2(keywords=lexicon.cats["prof30"], label=POS, attr_name="prof30")
+lf2_31 = lf2(keywords=lexicon.cats["prof31"], label=POS, attr_name="prof31")
+lf2_32 = lf2(keywords=lexicon.cats["prof32"], label=POS, attr_name="prof32")
+lf2_33 = lf2(keywords=lexicon.cats["prof33"], label=POS, attr_name="prof33")
+lf2_34 = lf2(keywords=lexicon.cats["prof34"], label=POS, attr_name="prof34")
+lf2_35 = lf2(keywords=lexicon.cats["prof35"], label=POS, attr_name="prof35")
+lf2_36 = lf2(keywords=lexicon.cats["prof36"], label=POS, attr_name="prof36")
+lf2_37 = lf2(keywords=lexicon.cats["prof37"], label=POS, attr_name="prof37")
+lf2_38 = lf2(keywords=lexicon.cats["prof38"], label=POS, attr_name="prof38")
+lf2_39 = lf2(keywords=lexicon.cats["prof39"], label=POS, attr_name="prof39")
+lf2_40 = lf2(keywords=lexicon.cats["prof40"], label=POS, attr_name="prof40")
+lf2_41 = lf2(keywords=lexicon.cats["prof41"], label=POS, attr_name="prof41")
+lf2_42 = lf2(keywords=lexicon.cats["prof42"], label=POS, attr_name="prof42")
 
 # data
 print("Dataset Preparation")
