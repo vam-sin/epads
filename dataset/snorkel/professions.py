@@ -77,12 +77,11 @@ POS = 1
 NEG = -1
 ABSTAIN = 0
 
-@labeling_function()
-def lf1_0(x): # lf1 works
+def pattern_lookup(x, pattern):
 	text = x.values[0]
 	neg = ['no', 'not', 'dont']
 
-	if lf1_patterns[0] in text:
+	if pattern in text:
 		for n in neg:
 			if n in text.split(' '):
 				for j in prof_list:
@@ -95,113 +94,21 @@ def lf1_0(x): # lf1 works
 
 	return ABSTAIN
 
-@labeling_function()
-def lf1_1(x): # lf1 works
-	text = x.values[0]
-	neg = ['no', 'not', 'dont']
+def lf1(pattern):
+	return LabelingFunction(
+		name = f"pattern_lf2_{pattern.replace(' ','')}",
+		f = pattern_lookup,
+		resources = dict(pattern = pattern)
+		)
 
-	if lf1_patterns[1] in text:
-		for n in neg:
-			if n in text.split(' '):
-				for j in prof_list:
-					if j in text.split(' '):
-						return NEG
-		
-		for k in prof_list:
-			if k in text.split(' '):
-				return POS
+lf1_0 = lf1(pattern = lf1_patterns[0])
+lf1_1 = lf1(pattern = lf1_patterns[1])
+lf1_2 = lf1(pattern = lf1_patterns[2])
+lf1_3 = lf1(pattern = lf1_patterns[3])
+lf1_4 = lf1(pattern = lf1_patterns[4])
+lf1_5 = lf1(pattern = lf1_patterns[5])
+lf1_6 = lf1(pattern = lf1_patterns[6])
 
-	return ABSTAIN
-
-@labeling_function()
-def lf1_2(x): # lf1 works
-	text = x.values[0]
-	neg = ['no', 'not', 'dont']
-
-	if lf1_patterns[2] in text:
-		for n in neg:
-			if n in text.split(' '):
-				for j in prof_list:
-					if j in text.split(' '):
-						return NEG
-		
-		for k in prof_list:
-			if k in text.split(' '):
-				return POS
-
-	return ABSTAIN
-
-@labeling_function()
-def lf1_3(x): # lf1 works
-	text = x.values[0]
-	neg = ['no', 'not', 'dont']
-
-	if lf1_patterns[3] in text:
-		for n in neg:
-			if n in text.split(' '):
-				for j in prof_list:
-					if j in text.split(' '):
-						return NEG
-		
-		for k in prof_list:
-			if k in text.split(' '):
-				return POS
-
-	return ABSTAIN
-
-@labeling_function()
-def lf1_4(x): # lf1 works
-	text = x.values[0]
-	neg = ['no', 'not', 'dont']
-
-	if lf1_patterns[4] in text:
-		for n in neg:
-			if n in text.split(' '):
-				for j in prof_list:
-					if j in text.split(' '):
-						return NEG
-		
-		for k in prof_list:
-			if k in text.split(' '):
-				return POS
-
-	return ABSTAIN
-
-@labeling_function()
-def lf1_5(x): # lf1 works
-	text = x.values[0]
-	neg = ['no', 'not', 'dont']
-
-	if lf1_patterns[5] in text:
-		for n in neg:
-			if n in text.split(' '):
-				for j in prof_list:
-					if j in text.split(' '):
-						return NEG
-		
-		for k in prof_list:
-			if k in text.split(' '):
-				return POS
-
-	return ABSTAIN
-
-@labeling_function()
-def lf1_6(x): # lf1 works
-	text = x.values[0]
-	neg = ['no', 'not', 'dont']
-
-	if lf1_patterns[6] in text:
-		for n in neg:
-			if n in text.split(' '):
-				for j in prof_list:
-					if j in text.split(' '):
-						return NEG
-		
-		for k in prof_list:
-			if k in text.split(' '):
-				return POS
-
-	return ABSTAIN
 
 def keyword_lookup(x, keywords, label):
     if any(word in x.values[0].lower() for word in keywords):
@@ -345,9 +252,3 @@ print(f"LF2:39 coverage: {lf2_39_coverage * 100:.4f}%")
 print(f"LF2:40 coverage: {lf2_40_coverage * 100:.4f}%")
 print(f"LF2:41 coverage: {lf2_41_coverage * 100:.4f}%")
 print(f"LF2:42 coverage: {lf2_42_coverage * 100:.4f}%")
-
-
-# for i in range(len(y)):
-# 	if y[i][0] == 1 or y[i][0] == -1:
-# 		print(dataset[i])
-
